@@ -5,8 +5,33 @@
   padding: .5em 0;
   box-shadow:0 0 20px 0 rgba(0,0,0,.2);
 
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
   &-logo {
     width: 200px;
     margin-top: -1em;
+  }
+
+  &-search {
+    padding: .5em 1em;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &-icon-search {
+    cursor: pointer;
+    font-size: 2em;
+    color: $textColorAlt;
+
+    @include desktop() {
+      display: none;
+    }
   }
 }

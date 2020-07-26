@@ -1,0 +1,47 @@
+
+
+.characters {
+  margin: 4em 0;
+
+  display: grid;
+  grid-gap: 2em;
+
+  @include desktop() {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+.character {
+  background-color: $cardColor;
+  border-radius: 10px;
+
+  display: flex;
+
+  img {
+    max-width: 200px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  &-text {
+    padding: 1em;
+    color: $textColorAlt;
+  }
+
+  &-category {
+    color: gray;
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: .2em;
+  }
+
+  &-title {
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  &-gender {
+    font-size: 1em;
+  }
+}

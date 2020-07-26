@@ -39,12 +39,11 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    }),
-
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
     })
   ]
 }
