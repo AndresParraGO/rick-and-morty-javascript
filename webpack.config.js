@@ -34,6 +34,20 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+
+      {
+        test: /\.(png|gif|jpe$g)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[ext]',
+              limit: 4096,
+              outputPath: 'assets',
+            }
+          }
+        ]
       }
     ]
   },

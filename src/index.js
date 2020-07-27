@@ -1,17 +1,23 @@
-
 // Styles
 import './scss/index.scss'
+
+import './assets/logo.png'
+import './assets/morty.png'
+
 
 import search from './search.js'
 import getData from './api.js'
 
 
 const charactersContainer =  document.getElementById('characters')
-
+const loading = document.getElementById('loading')
 
 const getCharacters = async () => {
   const data = await getData()
-  console.log(data)
+
+  loading.style.display = 'none'
+
+  // console.log(data)
   data.results.forEach(character => {
     renderCharacter(character)
   })

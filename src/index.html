@@ -4,12 +4,13 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta charset="UTF-8">
   <title>Rick and Morty - App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 <body>
   <header class="header">
     <div class="wrapper">
-      <img class="header-logo" src="https://occ-0-1722-92.1.nflxso.net/dnm/api/v6/TsSRXvDuraoJ7apdkH6tsHhf-ZQ/AAAABbtnw6C35mhluezr-K_FiP65TW93xpH0M3S6lKPv50_7eshzc1vosWxE3CxcnJ5-eVYmpcaQyra9yFLzQtsNx4odwYO-GtDDmDU0.png?r=47e" alt="Logo Rick and Morty">
+      <img class="header-logo" src="/assets/logo.png" alt="Logo Rick and Morty">
 
       <input id="header-search" class="header-search" type="text" placeholder="Search">
       <i id="header-icon-search" class="header-icon-search fas fa-search"></i>
@@ -18,9 +19,8 @@
 
   <main class="main">
     <div class="wrapper">
-      <section id="characters" class="characters">
-
-      </section>
+      <img src="/assets/morty.png" class="loading" id="loading" alt="Morty">
+      <section id="characters" class="characters"></section>
     </div>
   </main>
 </body>

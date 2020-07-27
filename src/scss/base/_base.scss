@@ -8,10 +8,25 @@
 
 
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', Arial, Verdana,sans-serif;
   background-color: $bgColor;
 }
 
+input {
+  font-family: inherit;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
 
 
 .wrapper {
