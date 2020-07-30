@@ -11,6 +11,9 @@
   }
 }
 
+.characters-big {
+  grid-template-columns: 1fr;
+}
 
 
 .character {
@@ -45,4 +48,34 @@
   &-gender {
     font-size: 1em;
   }
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,.2);
+  }
 }
+
+
+
+.character-big {
+  width: 100%;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include desktop {
+    flex-direction: row;
+
+    img {
+      max-width: 40%;
+    }
+  }
+
+
+}
+
+

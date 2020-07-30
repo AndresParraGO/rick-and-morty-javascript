@@ -6,11 +6,10 @@ const loading = document.getElementById('loading')
 
 
 
-const getCharacters = async (filter) => {
+const getCharacters = async (filter, callback) => {
   const data = await getData(filter)
 
   loading.style.display = 'none'
-
   charactersContainer.innerHTML = ''
 
 
@@ -22,16 +21,54 @@ const getCharacters = async (filter) => {
     loading.style.display = 'block'
   }
 
+  if(callback) callback()
+
+  forCharacters()
 }
 
 
-const renderCharacter = ( {image, name, gender, species} ) => {
+const showCharacter = async (id) => {
+  loading.style.display = 'block'
+  const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
+  const character = await res.json()
+
+  console.log(character)
+
+  charactersContainer.className = 'characters characters-big'
+  charactersContainer.innerHTML = `
+    <article class="character character-big">
+      <img src=${character.image} alt=${character.name}>
+      <div class="character-text">
+        <h2 class="character-title">${character.name}</h2>
+
+        <p class="character-category">Gender:</p>
+        <span class="character-gender">${character.gender}</span>
+
+        <p class="character-category">Species:</p>
+        <span class="character-gender">${character.species}</span>
+
+        <p class="character-category">Status:</p>
+        <span class="character-gender">${character.status}</span>
+
+        <p class="character-category">Origin:</p>
+        <span class="character-gender">${character.origin.name}</span>
+      </div>
+    </article>
+  `
+
+  loading.style.display = 'none'
+}
+
+
+
+const renderCharacter = ( {image, name, gender, species, id}) => {
   const card = document.createElement('article')
-  card.className = 'character'
+  card.className = `character`
+  card.id = `character-${id}`
   card.innerHTML = `
     <img src=${image} />
     <div class="character-text">
-      <p class="character-title">${name}</p>
+      <h3 class="character-title">${name}</h3>
 
       <p class="character-category">Gender:</p>
       <span class="character-gender">${gender}</span>
@@ -44,5 +81,15 @@ const renderCharacter = ( {image, name, gender, species} ) => {
 }
 
 
+const forCharacters = () => {
+  document.querySelectorAll('.character').forEach(character => {
+    character.addEventListener('click', () => {
+      const id = character.id.slice(10)
+      showCharacter(id)
+    })
+  })
+}
 
-export {getCharacters, renderCharacter}
+
+
+export {getCharacters, renderCharacter, showCharacter, forCharacters}

@@ -6,11 +6,10 @@ import './assets/morty.png'
 
 
 import search from './search.js'
-import {getCharacters, renderCharacter} from './characters.js'
+import {getCharacters,forCharacters} from './characters.js'
 
 
-
-document.addEventListener('DOMContentLoaded', e => {
+document.addEventListener('DOMContentLoaded', () => {
   search()
-  getCharacters()
+  getCharacters('', () => { forCharacters() })
 })
