@@ -2,6 +2,13 @@
 
 App of rick and morty with vanilla javascript and webpack.
 
+## Technologies Used
+* HTML
+* Sass
+* JavaScript
+* Webpack
+* FontAwesome
+
 
 ## Start
 1. Git clone the project.
