@@ -3,6 +3,7 @@ import './scss/index.scss'
 
 import './assets/logo.png'
 import './assets/morty.png'
+import './assets/icon.png'
 
 
 import search from './search.js'
